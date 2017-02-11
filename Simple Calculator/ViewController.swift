@@ -9,17 +9,82 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var firstNumberTxt: UITextField!
+    @IBOutlet weak var secondNumberTxt: UITextField!
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    var result = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+    
+    resultLabel.text = "Result is:   "
+    
+    }
+    
+    
+    @IBAction func plusBtn(_ sender: Any) {
+        
+        if let firstNumber = Int(firstNumberTxt.text!) {
+            if let secondNumber = Int(secondNumberTxt.text!) {
+                result = firstNumber + secondNumber
+                resultLabel.text = "Result is: \(String(result))"
+            }
+        }
+        
+    }
+    
+    
+    @IBAction func minusBtn(_ sender: Any) {
+        
+        if let firstNumber = Int(firstNumberTxt.text!) {
+            if let secondNumber = Int(secondNumberTxt.text!) {
+                result = firstNumber - secondNumber
+                resultLabel.text = "Result is: \(String(result))"
+            }
+        }
+
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func divideBtn(_ sender: Any) {
+        if let firstNumber = Int(firstNumberTxt.text!) {
+            if let secondNumber = Int(secondNumberTxt.text!) {
+                result = firstNumber / secondNumber
+                resultLabel.text = "Result is: \(String(result))"
+            }
+        }
+
+        
     }
+    
+    @IBAction func multiplyBtn(_ sender: Any) {
+        
+        if let firstNumber = Int(firstNumberTxt.text!) {
+            if let secondNumber = Int(secondNumberTxt.text!) {
+                result = firstNumber * secondNumber
+                resultLabel.text = "Result is: \(String(result))"
+            }
+        }
 
+    }
+    
+    
+    @IBAction func remainderBtn(_ sender: Any) {
+        
+        if let firstNumber = Int(firstNumberTxt.text!) {
+            if let secondNumber = Int(secondNumberTxt.text!) {
+                result = firstNumber % secondNumber
+                resultLabel.text = "Result is: \(String(result))"
+            }
+        }
 
+        
+    }
+    
+    
 }
 
